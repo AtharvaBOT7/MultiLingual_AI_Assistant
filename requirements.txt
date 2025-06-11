@@ -1,0 +1,8 @@
+SpeechRecognition
+pyaudio
+gTTS
+google-generativeai
+python-dotenv
+streamlit
+
+-e .

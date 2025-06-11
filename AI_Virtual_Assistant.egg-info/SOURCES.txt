@@ -1,0 +1,8 @@
+README.md
+setup.py
+AI_Virtual_Assistant.egg-info/PKG-INFO
+AI_Virtual_Assistant.egg-info/SOURCES.txt
+AI_Virtual_Assistant.egg-info/dependency_links.txt
+AI_Virtual_Assistant.egg-info/top_level.txt
+src/__init__.py
+src/helper.py
