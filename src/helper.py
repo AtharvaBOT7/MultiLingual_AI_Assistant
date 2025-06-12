@@ -10,10 +10,29 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 def voice_input():
-    pass
+    r = sr.Recognizer()
+
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = r.listen(source)
+
+    try:
+        text = r.recognize_google(audio)
+        print("You said: ", text)
+        return text
+    except sr.UnkownValueError:
+        print("Sorry, I could not understand what you were trying to say.")
+    except sr.RequestError as e:
+        print("Sorry, I could not request results from Google Speech Recognition Service: {0}".format(e))
 
 def llm_model(user_text):
-    pass
+    genai.configure(api_key=GOOGLE_API_KEY)
+
+    model = genai.GenerativeModel('models/gemini-2.5-flash-preview-native-audio-dialog')
+
+    response = model.generate_content(user_text)
+
+    result = response.text
 
 def text_to_speech(text):
     pass
