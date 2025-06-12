@@ -20,4 +20,6 @@ def main():
                                file_name="speech.mp3",
                                mime="auido/mp3")
 
-    
+
+if __name__=="__main__":
+    main()
