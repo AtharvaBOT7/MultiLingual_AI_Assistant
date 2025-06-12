@@ -9,6 +9,8 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
+os.environ["FLAC_CONVERTER"] = "/opt/homebrew/bin/flac"
+
 def voice_input():
     r = sr.Recognizer()
 
@@ -28,7 +30,7 @@ def voice_input():
 def llm_model(user_text):
     genai.configure(api_key=GOOGLE_API_KEY)
 
-    model = genai.GenerativeModel('models/gemini-2.5-flash-preview-native-audio-dialog')
+    model = genai.GenerativeModel("models/gemini-1.5-pro-latest")
 
     response = model.generate_content(user_text)
 
