@@ -20,7 +20,7 @@ def voice_input():
         text = r.recognize_google(audio)
         print("You said: ", text)
         return text
-    except sr.UnkownValueError:
+    except sr.UnknownValueError:
         print("Sorry, I could not understand what you were trying to say.")
     except sr.RequestError as e:
         print("Sorry, I could not request results from Google Speech Recognition Service: {0}".format(e))
