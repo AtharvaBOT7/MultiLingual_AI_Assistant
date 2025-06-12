@@ -30,7 +30,7 @@ def voice_input():
 def llm_model(user_text):
     genai.configure(api_key=GOOGLE_API_KEY)
 
-    model = genai.GenerativeModel("models/gemini-1.5-pro-latest")
+    model = genai.GenerativeModel("models/gemini-1.5-flash")
 
     response = model.generate_content(user_text)
 
